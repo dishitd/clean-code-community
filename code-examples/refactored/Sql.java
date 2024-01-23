@@ -1,4 +1,4 @@
-package clean.code.chapter10.refactored;
+package refactored;
 
 import clean.code.added.to.make.code.build.Column;
 import clean.code.added.to.make.code.build.Criteria;

@@ -58,7 +58,12 @@ import static constants.SystemConstants.DIRECT_APPROVAL;
 import static constants.SystemConstants.QUOTATION_APPROVAL;
 import static constants.SystemConstants.VENDOR_RECIPIENT;
 
-public class FtlContractOperation {
+interface ContractOperation {
+    // assignContract();
+    // approveContract();
+}
+
+public class FtlContractOperation implement ContractOperation {
 
     @Inject
     private VendorProductManagement vendorProductManagement;
@@ -127,6 +132,10 @@ public class FtlContractOperation {
         performContractApprovalOperation(sessionData, unapprovedProducts, contractList, logo, approvalRequest,
                 vendorCollectionName);
         updateFtlContractStatusEnabled(vendorCollectionName, approvalRequest, collectionName);
+    }
+
+    private BigDecimal calcculateContractPrice() {
+        // Complex Logic
     }
 
     private void updateFtlContractStatusEnabled(String vendorCollectionName, ContractApprovalRequest approvalRequest, String collectionName) {
